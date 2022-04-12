@@ -6,23 +6,16 @@ import Solperp from './components/Solperp';
 
 function App() {
   return (
-    <div className='bg-primary'>
+    <div className='bg-primary min-h-screen'>
       <div className='container mx-auto '>
         <div className='text-white'>
           <Statistical />
         </div>
         <div
-          className='react-grid-layout'
-          style={{ height: '1160px' }}
+          className='grid grid-cols-4 gap-4 '
         >
           <div
-            className='react-grid-item cssTransforms react-resizable-hide react-resizable'
-            style={{
-              width: '775px',
-              height: '665px',
-              position: 'absolute',
-              transform: 'translate(10px, 10px)',
-            }}
+            className='xl:col-span-2 col-span-4 row-span-2 md:min-h-[560px] sm:min-h-[560px]'
           >
             <div className='thin-scroll relative overflow-auto overflow-x-hidden rounded-lg bg-th-bkg-2 p-2.5 md:p-4 h-full pl-0 md:pl-0 md:pr-1 md:pb-1 md:pt-2.5'>
               <div
@@ -37,18 +30,21 @@ function App() {
                 />
               </div>
             </div>
-            <span className='react-resizable-handle react-resizable-handle-se' />
           </div>
-          <Orderbooks />
-          <Solperp />
-
           <div
-            className='react-grid-item cssTransforms react-resizable-hide react-resizable'
+            className='xl:col-span-1 lg:col-span-2 sm:col-span-4'
+          >
+            <Orderbooks />
+          </div>
+          <div
+            className='xl:col-span-1 lg:col-span-2 sm:col-span-4'
+          >
+            <Solperp />
+          </div>
+          <div
+            className='xl:col-span-1 lg:col-span-2 sm:col-span-4'
             style={{
-              width: '383px',
               height: '240px',
-              position: 'absolute',
-              transform: 'translate(795px, 435px)',
             }}
           >
             <div className='thin-scroll relative overflow-auto overflow-x-hidden rounded-lg bg-th-bkg-2 p-2.5 md:p-4 h-full'>

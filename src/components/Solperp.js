@@ -4,15 +4,8 @@ const Solperp = () => {
     const [selecting, setSelecting] = useState(false);
     const [isBuyMode, setBuyMode] = useState(true);
     return (
-        <div
-            className='react-grid-item cssTransforms react-resizable-hide react-resizable'
-            style={{
-                width: '383px',
-                height: '415px',
-                position: 'absolute',
-                transform: 'translate(1187px, 10px)',
-            }}
-        >
+        <
+            >
             <div className='flipcard'>
                 <div
                     className='relative h-full w-full text-center'
@@ -367,7 +360,7 @@ const Solperp = () => {
                 </div>
             </div>
             <span className='react-resizable-handle react-resizable-handle-se' />
-        </div>
+        </>
     );
 };
 

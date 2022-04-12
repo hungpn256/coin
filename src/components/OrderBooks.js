@@ -1,17 +1,9 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 
 const Orderbooks = () => {
+    const [selecting, setSelecting] = useState(false);
     return (
-        <div
-            className='react-grid-item cssTransforms react-resizable-hide react-resizable'
-            style={{
-                width: '383px',
-                height: '415px',
-                position: 'absolute',
-                transform: 'translate(795px, 10px)',
-            }}
-        >
+        <>
             <div className='flipcard'>
                 <div
                     className='relative h-full w-full text-center'
@@ -98,10 +90,9 @@ const Orderbooks = () => {
                                         className='rounded border border-th-bkg-4 bg-th-bkg-1 py-0.5 font-normal hover:border-th-fgd-4 focus:border-th-fgd-4 focus:outline-none'
                                         id='headlessui-listbox-button-8'
                                         type='button'
-                                        aria-haspopup='true'
-                                        aria-expanded='false'
+                                        onClick={() => setSelecting(!selecting)}
                                     >
-                                        <div className='flex items-center justify-between space-x-1 pr-1 pl-2 text-xs'>
+                                        <div className='flex items-center justify-between space-x-1 pr-1 pl-2 text-xs text-white'>
                                             <span>0.01</span>
                                             <svg
                                                 xmlns='http://www.w3.org/2000/svg'
@@ -118,6 +109,55 @@ const Orderbooks = () => {
                                             </svg>
                                         </div>
                                     </button>
+                                    {selecting && <ul
+                                        class='thin-scroll absolute left-0 top-5 z-20 mt-1 max-h-60 w-full overflow-auto rounded-md bg-th-bkg-3 p-2 text-th-fgd-1 outline-none'
+                                        aria-labelledby='headlessui-listbox-button-8'
+                                        aria-orientation='vertical'
+                                        id='headlessui-listbox-options-17'
+                                        role='listbox'
+                                        tabindex='0'
+                                        aria-activedescendant='headlessui-listbox-option-18'
+                                    >
+                                        <li
+                                            id='headlessui-listbox-option-18'
+                                        >
+                                            <div class='default-transition text-right text-th-fgd-1 hover:cursor-pointer hover:bg-th-bkg-3 hover:text-th-primary text-th-primary'>
+                                                0.01
+                                            </div>
+                                        </li>
+                                        <li
+                                            id='headlessui-listbox-option-19'
+                                            tabindex='-1'
+                                        >
+                                            <div class='default-transition text-right text-th-fgd-1 hover:cursor-pointer hover:bg-th-bkg-3 hover:text-th-primary false'>
+                                                0.05
+                                            </div>
+                                        </li>
+                                        <li
+                                            id='headlessui-listbox-option-20'
+                                            tabindex='-1'
+                                        >
+                                            <div class='default-transition text-right text-th-fgd-1 hover:cursor-pointer hover:bg-th-bkg-3 hover:text-th-primary false'>
+                                                0.1
+                                            </div>
+                                        </li>
+                                        <li
+                                            id='headlessui-listbox-option-21'
+                                            tabindex='-1'
+                                        >
+                                            <div class='default-transition text-right text-th-fgd-1 hover:cursor-pointer hover:bg-th-bkg-3 hover:text-th-primary false'>
+                                                0.5
+                                            </div>
+                                        </li>
+                                        <li
+                                            id='headlessui-listbox-option-22'
+                                            tabindex='-1'
+                                        >
+                                            <div class='default-transition text-right text-th-fgd-1 hover:cursor-pointer hover:bg-th-bkg-3 hover:text-th-primary false'>
+                                                1
+                                            </div>
+                                        </li>
+                                    </ul>}
                                 </div>
                             </div>
                             <div className='mb-2 flex justify-between text-xs text-th-fgd-4'>
@@ -503,8 +543,8 @@ const Orderbooks = () => {
                 </div>
             </div>
             <span className='react-resizable-handle react-resizable-handle-se' />
-        </div>
+        </>
     );
-}
+};
 
 export default Orderbooks;
