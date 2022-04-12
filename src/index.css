@@ -1,3 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --primary: #f2c94c;
+  --primary-dark: #e4af11;
+  --red: #f84638;
+  --red-dark: #c7251a;
+  --red-muted: #6d2832;
+  --green: #afd803;
+  --green-dark: #91b503;
+  --green-muted: #49601b;
+  --orange: #ff9c24;
+  --bkg-1: #141026;
+  --bkg-2: #1d1832;
+  --bkg-3: #2a2440;
+  --bkg-4: #37324d;
+  --fgd-1: #e5e3ec;
+  --fgd-2: #d2cede;
+  --fgd-3: #c1bed3;
+  --fgd-4: #7e7a90;
+  --bkg-button: #464063;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
