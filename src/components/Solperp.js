@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import img from '../assets/icons/usdc.svg';
 const Solperp = () => {
     const [selecting, setSelecting] = useState(false);
+    const [isBuyMode, setBuyMode] = useState(true);
     return (
         <div
             className='react-grid-item cssTransforms react-resizable-hide react-resizable'
@@ -31,26 +32,29 @@ const Solperp = () => {
                                     </span>
                                 </h2>
                                 <div className='relative mb-3 md:-mt-2.5 md:border-b md:border-th-fgd-4'>
-                                    <div className='absolute hidden md:block translate-x-full bg-th-red default-transition bottom-[-1px] left-0 h-0.5 w-1/2 transform' />
+                                    <div className={`absolute hidden md:block ${isBuyMode ? 'translate-x-0 bg-th-green' : 'translate-x-full bg-th-red'} default-transition bottom-[-1px] left-0 h-0.5 w-1/2 transform`} />
                                     <nav
                                         className='-mb-px flex space-x-2'
                                         aria-label='Tabs'
                                     >
                                         <button
-                                            className='default-transition relative flex w-1/2 cursor-pointer 
+                                            className={`default-transition relative flex w-1/2 cursor-pointer 
                                                 items-center justify-center whitespace-nowrap py-1 text-sm font-semibold hover:opacity-100 md:text-base
-                                                border border-th-fgd-4 text-th-fgd-4 hover:border-th-green hover:text-th-green md:border-0
-                                            '
+                                                border border-th-fgd-4 text-th-fgd-4 hover:border-th-green hover:text-th-green md:border-0 ${isBuyMode && 'border-th-green text-th-green'}
+                                            `}
+                                            onClick={() => setBuyMode(true)}
                                         >
                                             Buy
                                         </button>
                                         <button
-                                            className='default-transition relative flex w-1/2 cursor-pointer 
+                                            className={`default-transition relative flex w-1/2 cursor-pointer 
                                                 items-center justify-center whitespace-nowrap py-1 text-sm font-semibold hover:opacity-100 md:text-base
-                                                border border-th-red text-th-red md:border-0
-                                            '
+                                                border border-th-fgd-4 text-th-fgd-4 hover:border-th-red hover:text-th-red md:border-0 ${!isBuyMode && 'border-th-red text-th-red'}
+                                            `}
+                                            onClick={() => setBuyMode(false)}
                                         >
                                             Sell
+
                                         </button>
                                     </nav>
                                 </div>
